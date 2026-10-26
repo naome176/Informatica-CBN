@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chemie Wereldreis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Mono:wght@400;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6v5l5 10a2 2 0 0 1-1.8 3H5.8A2 2 0 0 1 4 18l5-10z" fill="none" stroke="#FFB43A" stroke-width="1.6" stroke-linejoin="round"/><path d="M6.5 15h11l1.6 3.2a1 1 0 0 1-.9 1.4H5.8a1 1 0 0 1-.9-1.4z" fill="#3BA7A0"/></svg>
+      <div><h1>Chemie Wereldreis</h1><p>Oefen scheikunde op reis</p></div>
+    </div>
+    <div class="top-right">
+    <div class="refs">
+      <button class="chip pt-btn pt-open" type="button" aria-haspopup="dialog"><small>Naslag</small><b>Periodiek systeem</b></button>
+      <button class="chip pt-btn mol-open" type="button" aria-haspopup="dialog"><small>Naslag</small><b>Molrekenschema</b></button>
+    </div>
+    <div class="hud" aria-label="Scorebord">
+      <div class="chip"><small>Punten</small><b id="hud-score">0</b></div>
+      <div class="chip"><small>Combo</small><b id="hud-combo">&times;0</b></div>
+      <div class="chip"><small>Stempels</small><b id="hud-stamps">0/9</b></div>
+    </div>
+    </div>
+  </header>
+
+  <section id="screen-map">
+    <div class="level-bar" id="levelBar" role="radiogroup" aria-label="Kies een niveau">
+      <span class="lb-title">Kies je niveau</span>
+      <button type="button" class="lv l1" role="radio" data-l="1"><b>Makkelijk</b><small>Basisvragen, tip altijd zichtbaar &middot; bronzen stempel</small></button>
+      <button type="button" class="lv l2 on" role="radio" data-l="2"><b>Medium</b><small>Meer stappen, hint kost punten &middot; zilveren stempel &middot; ×1,5</small></button>
+      <button type="button" class="lv l3" role="radio" data-l="3"><b>Moeilijk</b><small>Samengestelde vragen, grotere reacties &middot; gouden stempel &middot; ×2</small></button>
+    </div>
+    <div class="card map-card">
+      <div class="map-head">
+        <div><h2>Reisroute</h2><p>Kies een stad en het vliegtuig vliegt er direct naartoe. Alle negen steden staan open. Beantwoord vijf vragen, lever in en zie dan wat goed en fout was. Met minstens 3 goed krijg je het stempel. Elke keer krijg je nieuwe vragen met nieuwe getallen.</p></div>
+        <p class="swipe">Schuif de kaart zijwaarts</p>
+      </div>
+      <div class="map-scroll" id="mapScroll"><svg id="map" viewBox="0 0 1000 372" role="group" aria-label="Wereldkaart met negen steden"></svg></div>
+    </div>
+    <div class="board" id="board"></div>
+    <div class="card passport"><h3>Paspoort</h3><p class="legend"><i class="med l1 on"></i> brons = makkelijk <i class="med l2 on"></i> zilver = medium <i class="med l3 on"></i> goud = moeilijk</p><div class="stamps" id="stamps"></div><div class="res-actions pass-act" id="passAct"></div></div>
+  </section>
+
+  <section id="screen-ep" hidden>
+    <div class="ep-head" id="epHead"></div>
+    <article class="ticket" id="ticket"></article>
+  </section>
+
+  <section id="screen-result" class="card res" hidden></section>
+  <section id="screen-final" class="card res" hidden></section>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+  <script src="voortgang.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>

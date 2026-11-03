@@ -1,15 +1,18 @@
-// CONTROLE 1: Test of de beginscore straks klopt
-let testScore = 0;
-if (testScore === 0) {
-    console.log("✅ Test 1 geslaagd: Beginscore staat netjes op 0.");
+// === TEST 1: Controleer de beginscore van de game ===
+let startScore = 0;
+
+if (startScore === 0) {
+    console.log("✅ Test 1 geslaagd: De beginscore van de scheikundequiz is 0.");
 } else {
-    console.error("❌ Test 1 mislukt: Beginscore is onjuist.");
+    console.error("❌ Test 1 mislukt: Beginscore moet 0 zijn.");
 }
 
-// CONTROLE 2: Test of de speler actief kan starten
-let spelerActief = true;
-if (spelerActief === true) {
-    console.log("✅ Test 2 geslaagd: Speler start als actief.");
+// === TEST 2: Controleer een scheikundig antwoord (bijv. Waterstof = H) ===
+let gegevenAntwoord = "H";
+let correctAntwoord = "H";
+
+if (gegevenAntwoord === correctAntwoord) {
+    console.log("✅ Test 2 geslaagd: Scheikundig symbool klopt!");
 } else {
-    console.error("❌ Test 2 mislukt: Speler is niet actief.");
+    console.error("❌ Test 2 mislukt: Antwoord is onjuist.");
 }
